@@ -10,6 +10,15 @@ export const fadeIn: Variants = {
   },
 };
 
+export const bottomFadeIn: Variants = {
+  hidden: { opacity: 0, y: 75 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1.2, ease: "easeOut" },
+  },
+};
+
 export const pullUp: Variants = {
   initial: { height: 0 },
   animate: (custom: number) => ({

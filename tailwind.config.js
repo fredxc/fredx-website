@@ -13,6 +13,7 @@ export default {
         heading: ["General Sans", "system-ui", "sans-serif"],
       },
       fontSize: {
+        "7xl": "6rem",
         "8xl": "10rem",
       },
       maxWidth: {
