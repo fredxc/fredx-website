@@ -12,10 +12,7 @@ export const Navbar: React.FC = () => {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-8 md:px-16 xl:px-2">
         <a href="/" className="flex items-center gap-2 text-primary-dark">
-          <img src="/assets/logo.png" alt="Logo" className="w-5" />
-          <span className="font-heading text-2xl font-semibold opacity-80">
-            FRED C.
-          </span>
+          <img src="/assets/logo.png" alt="Logo" className="w-8" />
         </a>
 
         <ul className="flex items-center gap-8 font-semibold text-primary-dark/80">

@@ -1,12 +1,12 @@
 import { Variants } from "framer-motion";
 
-const fixedDelay = 0.7;
+const GLOBAL_DELAY = 0.9;
 
 export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 1.5, ease: "easeOut", delay: fixedDelay + 0.5 },
+    transition: { duration: 1.5, ease: "easeOut", delay: GLOBAL_DELAY + 0.5 },
   },
 };
 
@@ -15,10 +15,10 @@ export const pullUp: Variants = {
   animate: (custom: number) => ({
     height: "15rem",
     transition: {
+      bounce: 0.4,
       duration: 1,
       ease: "easeOut",
-      bounce: 1,
-      delay: fixedDelay + custom,
+      delay: GLOBAL_DELAY + custom,
     },
   }),
 };
@@ -29,36 +29,37 @@ export const navAnimation: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1.5,
+      duration: 1.2,
       ease: "easeOut",
-      delay: fixedDelay + 0.5,
+      delay: GLOBAL_DELAY + 0.5,
     },
   },
 };
 
 export const scaleIn: Variants = {
-  hidden: { opacity: 0, backgroundSize: "300%", scale: 1.5 },
+  hidden: { opacity: 0, backgroundSize: "175%", scale: 1.3 },
   visible: {
-    scale: 1,
-    opacity: 0.2,
-    transition: { duration: 1.6, ease: "easeOut" },
+    opacity: 0.3,
+    transition: { duration: 1, ease: "easeInOut" },
   },
   backgroundSize: {
-    backgroundSize: "200%",
-    transition: { duration: 2.0, ease: "easeOut" },
+    scale: 1,
+    backgroundSize: "110%",
+    transition: { duration: 2, ease: "easeInOut" },
   },
 };
 
 export const scrollIndicator: Variants = {
   initial: { width: 0 },
-  animate: () => ({
+  animate: {
     width: ["0%", "100%"],
     left: ["0%", "0%", "110%"],
     transition: {
-      duration: 1.7,
+      duration: 1.5,
       repeat: Infinity,
       ease: "easeInOut",
-      delay: fixedDelay + 0.5,
+      repeatType: "loop",
+      delay: GLOBAL_DELAY + 0.5,
     },
-  }),
+  },
 };
