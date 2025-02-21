@@ -1,0 +1,29 @@
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Cabinet Grotesk", system-ui, sans-serif;
+    @apply scroll-smooth bg-light-cream text-primary-dark;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "General Sans", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .hero-text-outline {
+    color: transparent;
+    -webkit-text-stroke: 6px #393632;
+  }
+}
