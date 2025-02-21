@@ -18,7 +18,7 @@ const HeroText: React.FC<HeroTextProps> = ({ text }) => {
             initial="initial"
             animate="animate"
             className={`overflow-hidden font-heading text-8xl font-bold ${
-              index === 1 ? "hero-text-outline" : "text-primary-dark"
+              index === 1 && "hero-text-outline"
             }`}
           >
             {text}
