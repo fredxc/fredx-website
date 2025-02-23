@@ -8,6 +8,8 @@ const AnimatedBackground = lazy(
   () => import("./components/AnimatedBackground"),
 );
 const VisionSection = lazy(() => import("./components/VisionSection"));
+const AboutSection = lazy(() => import("./components/AboutSection"));
+const BlankSection = lazy(() => import("./components/BlankSection"));
 
 const App = () => {
   const { theme } = useThemeStore();
@@ -37,6 +39,8 @@ const App = () => {
             <ScrollIndicator />
           </section>
           <VisionSection />
+          <AboutSection />
+          <BlankSection />
         </Suspense>
       </div>
     </main>
