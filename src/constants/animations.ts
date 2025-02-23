@@ -4,10 +4,14 @@ const GLOBAL_DELAY = 0.9;
 
 export const fadeIn: Variants = {
   hidden: { opacity: 0 },
-  visible: {
+  visible: (custom: number) => ({
     opacity: 1,
-    transition: { duration: 1.5, ease: "easeOut", delay: GLOBAL_DELAY + 0.5 },
-  },
+    transition: {
+      duration: 1.5,
+      ease: "easeOut",
+      delay: custom && GLOBAL_DELAY + custom,
+    },
+  }),
 };
 
 export const bottomFadeIn: Variants = {
@@ -15,7 +19,7 @@ export const bottomFadeIn: Variants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 1.2, ease: "easeOut" },
+    transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 

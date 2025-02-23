@@ -7,6 +7,7 @@ const Navbar: React.FC = () => {
   const { theme } = useThemeStore();
   const darkTheme = theme === "dark";
 
+  const navBg = darkTheme ? "bg-primary-dark" : "bg-light-cream";
   const textColor = darkTheme ? "text-light-cream" : "text-primary-dark";
   const textColorMuted = darkTheme
     ? "text-light-cream/80"
@@ -21,11 +22,11 @@ const Navbar: React.FC = () => {
       initial="hidden"
       animate="visible"
       variants={navAnimation}
-      className="fixed left-0 right-0 top-0 z-50 bg-transparent transition-colors duration-300"
+      className={`fixed left-0 right-0 top-0 z-50 transition-colors duration-700 ${navBg}`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-8 md:px-16 xl:px-2">
         {/* Logo */}
-        <a href="/" className={`flex items-center gap-2 ${textColor}`}>
+        <a href="#" className={`flex items-center gap-2 ${textColor}`}>
           <img
             src={darkTheme ? "/assets/logo-light.png" : "/assets/logo.png"}
             alt="Logo"
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
 
         {/* Navigation Links */}
         <ul
-          className={`flex items-center gap-8 font-semibold transition-colors duration-300 ${textColorMuted}`}
+          className={`flex items-center gap-8 text-lg font-semibold transition-colors duration-300 ${textColorMuted}`}
         >
           <li className={`transition-colors duration-200 ${hoverColor}`}>
             <a href="#about">about</a>

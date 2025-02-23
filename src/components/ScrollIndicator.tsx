@@ -4,6 +4,7 @@ import { fadeIn, scrollIndicator } from "../constants/animations";
 
 const ScrollIndicator: React.FC = () => (
   <motion.div
+    custom={0.5}
     initial="hidden"
     animate="visible"
     variants={fadeIn}

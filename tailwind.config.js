@@ -7,6 +7,7 @@ export default {
         "primary-dark": "#282521",
         "soft-green": "#959C91",
         "light-cream": "#F6F7F6",
+        "test-color": "#A89986",
       },
       fontFamily: {
         sans: ["Cabinet Grotesk", "system-ui", "sans-serif"],
