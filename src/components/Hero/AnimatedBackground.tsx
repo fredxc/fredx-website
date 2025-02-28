@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { scaleIn } from "../constants/animations";
+import { scaleIn } from "../../constants/animations";
 
 interface AnimatedBackgroundProps {
   imageUrl: string;

@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { fadeIn, scrollIndicator } from "../constants/animations";
+import { fadeIn, scrollIndicator } from "../../constants/animations";
 
 const ScrollIndicator: React.FC = () => (
   <motion.div

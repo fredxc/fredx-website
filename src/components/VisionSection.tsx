@@ -1,17 +1,16 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, memo } from "react";
 import { motion, useInView } from "framer-motion";
 import useThemeStore from "../hooks/useThemeStore";
 import { bottomFadeIn } from "../constants/animations";
 
 const VisionSection: React.FC = () => {
   const sectionRef = useRef(null);
-  const { toggleTheme, theme } = useThemeStore();
+  const { toggleTheme } = useThemeStore();
   const isInView = useInView(sectionRef, { amount: 0.5 });
 
   useEffect(() => {
-    if (isInView && theme === "light") toggleTheme();
-    else if (!isInView && theme === "dark") toggleTheme();
-  }, [isInView, theme, toggleTheme]);
+    toggleTheme();
+  }, [isInView, toggleTheme]);
 
   return (
     <section
@@ -33,4 +32,4 @@ const VisionSection: React.FC = () => {
   );
 };
 
-export default VisionSection;
+export default memo(VisionSection);

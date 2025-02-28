@@ -23,6 +23,15 @@ export const bottomFadeIn: Variants = {
   },
 };
 
+export const sideFadeIn: Variants = {
+  hidden: (custom: number) => ({ opacity: 0, x: custom % 2 === 0 ? -50 : 50 }),
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
 export const pullUp: Variants = {
   initial: { height: 0 },
   animate: (custom: number) => ({
