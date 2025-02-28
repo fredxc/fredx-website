@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { sideFadeIn } from "../constants/animations";
+import { sideFadeIn } from "../../constants/animations";
+import { Circle, Diamond, Hexagon, Squircle, Triangle } from "lucide-react";
 
 const experiences = [
   {
@@ -10,18 +11,6 @@ const experiences = [
       "I lead web and mobile development, ensuring scalable, high-performance applications. I focus on frontend architecture, DevOps, and agile collaboration, delivering seamless UI/UX experiences. My expertise includes cloud-based deployments, performance optimizations, and cross-functional leadership, driving efficiency and innovation in large-scale projects.",
     skills: ["React", "TypeScript", "Node.js", "Firebase"],
   },
-  // {
-  //   date: "JAN 2023",
-  //   title: "Sold My Own Tech Company",
-  //   description:
-  //     "I played a pivotal role in structuring Braint Tech for acquisition by Weme, ensuring smooth team integration and business alignment. Focusing on communication, culture, and strategy, I navigated resource limitations and structural challenges, fostering a people-first approach that ensured a seamless transition and long-term success.",
-  //   skills: [
-  //     "Team Integration",
-  //     "Business Structuring",
-  //     "Communication",
-  //     "Leadership",
-  //   ],
-  // },
   {
     date: "Jun 2022 - Jan 2023",
     title: "TECH LEAD",
@@ -64,6 +53,9 @@ const experienceListOffsets = [
   "mt-[-8.3%]",
 ];
 
+const iconStyle =
+  "absolute left-1/2 top-12 h-8 w-8 -translate-x-1/2 rounded-full fill-soft-green stroke-soft-green";
+
 const Timeline = () => {
   return (
     <div id="timeline" className="relative mx-auto h-[200svh] max-w-7xl">
@@ -79,9 +71,14 @@ const Timeline = () => {
           }}
         >
           <div
-            className={`absolute left-1/2 ${index ? "top-0" : "top-20"} z-10 ${index === experiences.length - 1 ? "h-20" : "h-full"} w-1 -translate-x-1/2 bg-light-cream`}
+            className={`absolute left-1/2 ${index ? "top-0" : "top-16"} z-10 ${index === experiences.length - 1 ? "h-16" : "h-full"} w-1 -translate-x-1/2 bg-soft-green`}
           />
-          <div className="absolute left-1/2 top-12 h-8 w-8 -translate-x-1/2 rounded-full bg-light-cream" />
+
+          {index === 0 && <Diamond className={iconStyle} />}
+          {index === 1 && <Hexagon className={iconStyle} />}
+          {index === 2 && <Circle className={iconStyle} />}
+          {index === 3 && <Squircle className={iconStyle} />}
+          {index === 4 && <Triangle className={iconStyle} />}
 
           <motion.div
             initial="hidden"

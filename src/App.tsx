@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
-import ExperienceSection from "./components/ExperienceSection";
+import ExperienceSection from "./components/Experience/ExperienceSection";
 import useThemeStore from "./hooks/useThemeStore";
 import { memo, Suspense, lazy, useRef } from "react";
 

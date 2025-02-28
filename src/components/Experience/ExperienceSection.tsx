@@ -1,8 +1,8 @@
 import Timeline from "./Timeline";
 import { useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import useThemeStore from "../hooks/useThemeStore";
-import { bottomFadeIn } from "../constants/animations";
+import useThemeStore from "../../hooks/useThemeStore";
+import { bottomFadeIn } from "../../constants/animations";
 
 interface ExperienceSectionProps {
   sectionRef: React.RefObject<HTMLDivElement>;
