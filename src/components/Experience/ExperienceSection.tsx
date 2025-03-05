@@ -1,29 +1,10 @@
 import Timeline from "./Timeline";
-import { useEffect } from "react";
-import { motion, useInView } from "framer-motion";
-import useThemeStore from "../../hooks/useThemeStore";
+import { motion } from "framer-motion";
 import { bottomFadeIn } from "../../constants/animations";
 
-interface ExperienceSectionProps {
-  sectionRef: React.RefObject<HTMLDivElement>;
-}
-
-const ExperienceSection: React.FC<ExperienceSectionProps> = ({
-  sectionRef,
-}) => {
-  const { toggleTheme } = useThemeStore();
-  const isInView = useInView(sectionRef, { margin: "0px 0px -90% 0px" });
-
-  useEffect(() => {
-    toggleTheme();
-  }, [isInView, toggleTheme]);
-
+const ExperienceSection: React.FC = () => {
   return (
-    <section
-      id="experience"
-      ref={sectionRef}
-      className="rounded-t-3xl bg-primary-dark py-24"
-    >
+    <section id="experience" className="py-24">
       <motion.h2
         initial="hidden"
         whileInView="visible"

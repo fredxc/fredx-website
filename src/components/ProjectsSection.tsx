@@ -1,12 +1,14 @@
-import { memo, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { bottomFadeIn, fadeIn } from "../constants/animations";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-interface AboutSectionProps {
-  nextSectionRef: React.RefObject<HTMLDivElement>;
+interface ProjectsSectionProps {
+  nextSectionRef?: React.RefObject<HTMLDivElement>;
 }
 
-const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
+const ProjectsSection: React.FC<ProjectsSectionProps> = ({
+  nextSectionRef,
+}) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -18,7 +20,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
     offset: ["start end", "end start"],
   });
 
-  const opacityConstant = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scaleConstant = useTransform(scrollYProgress, [0, 0.6], [1, 0.8]);
   const yConstant = useTransform(scrollYProgress, [0, 0.8], [0, 140]);
 
@@ -28,12 +29,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
       style={{
         scale: scaleConstant,
         translateY: yConstant,
-        opacity: opacityConstant,
-        willChange: "opacity, transform",
+        willChange: "transform",
       }}
-      className="relative mb-[-100svh] px-6 py-24"
+      className="relative px-6 py-24"
     >
-      <div className="sticky -top-16 h-svh">
+      <div className="h-svh">
         <motion.h2
           initial="hidden"
           whileInView="visible"
@@ -101,4 +101,4 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
   );
 };
 
-export default memo(AboutSection);
+export default ProjectsSection;
