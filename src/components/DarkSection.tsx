@@ -14,7 +14,6 @@ const DarkSection: React.FC<DarkSectionProps> = ({ sectionRef }) => {
 
   useEffect(() => {
     toggleTheme();
-    console.log("DarkSection:", isInView);
   }, [isInView, toggleTheme]);
 
   return (
