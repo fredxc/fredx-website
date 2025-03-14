@@ -10,7 +10,7 @@ const ExperienceSection: React.FC = () => {
         whileInView="visible"
         variants={bottomFadeIn}
         viewport={{ once: true, amount: 0.8 }}
-        className="mb-16 flex items-center justify-center text-6xl font-semibold text-light-cream md:text-7xl"
+        className="mb-16 flex items-center justify-center text-6xl font-semibold text-light-cream/90 md:text-7xl"
       >
         <span className="mr-4 text-4xl">⯋</span>EXPERIENCE
         <span className="ml-4 text-4xl">⯋</span>

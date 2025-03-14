@@ -15,7 +15,10 @@ const Counter: React.FC<CounterProps> = ({ count }) => {
         <motion.div
           className="absolute flex h-full w-fit flex-col"
           animate={{ y: `calc(-${(count - 1) * 9.6}rem)` }}
-          transition={{ type: "spring", stiffness: 50, damping: 12 }}
+          transition={{
+            duration: 1,
+            ease: [0.65, 0, 0, 1],
+          }}
         >
           <span className="inline-block">1.</span>
           <span className="inline-block">2.</span>

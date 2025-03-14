@@ -1,16 +1,12 @@
 import Counter from "./Counter";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import { bottomFadeIn, sideFadeIn } from "../constants/animations";
-
-interface ProjectsSectionProps {
-  nextSectionRef?: React.RefObject<HTMLDivElement>;
-}
+import { bottomFadeIn, sideFadeIn } from "../../constants/animations";
 
 const projects = [
   {
     id: 1,
-    imgSrc: "/assets/my-portrait.jpg",
+    imgSrc: "/assets/bg-1.jpg",
     alt: "Fred Xavier Portrait",
     title: "Digital Product",
     heading: "Design & Technology",
@@ -18,7 +14,7 @@ const projects = [
   },
   {
     id: 2,
-    imgSrc: "/assets/my-portrait.jpg",
+    imgSrc: "/assets/bg-2.jpg",
     alt: "Fred Xavier Portrait",
     title: "Digital Product",
     heading: "Design & Technology",
@@ -26,7 +22,7 @@ const projects = [
   },
   {
     id: 3,
-    imgSrc: "/assets/my-portrait.jpg",
+    imgSrc: "/assets/bg-3.jpg",
     alt: "Fred Xavier Portrait",
     title: "Digital Product",
     heading: "Design & Technology",
@@ -34,7 +30,7 @@ const projects = [
   },
   {
     id: 4,
-    imgSrc: "/assets/my-portrait.jpg",
+    imgSrc: "/assets/bg-4.jpg",
     alt: "Fred Xavier Portrait",
     title: "Digital Product",
     heading: "Design & Technology",
@@ -42,7 +38,7 @@ const projects = [
   },
 ];
 
-const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
+const ProjectsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -51,7 +47,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
       projectRefs.current.forEach((ref, index) => {
         if (ref) {
           const rect = ref.getBoundingClientRect();
-          if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= 0) {
+          if (rect.top <= window.innerHeight * 0.2 && rect.bottom >= 0) {
             setActiveIndex(index + 1);
           }
         }
@@ -69,7 +65,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
         whileInView="visible"
         variants={bottomFadeIn}
         viewport={{ once: true, amount: 0.8 }}
-        className="mb-24 flex items-center justify-center text-6xl font-semibold text-light-cream md:text-7xl"
+        className="mb-24 flex items-center justify-center text-6xl font-semibold text-light-cream/90 md:text-7xl"
       >
         <span className="mr-4 text-4xl">⯋</span>PROJECTS
         <span className="ml-4 text-4xl">⯋</span>
