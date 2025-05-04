@@ -5,8 +5,8 @@ const Navbar = lazy(() => import("./components/Navbar"));
 const HeroText = lazy(() => import("./components/Hero/HeroText"));
 const DarkSection = lazy(() => import("./components/DarkSection"));
 const AboutSection = lazy(() => import("./components/AboutSection"));
-const BlankSection = lazy(() => import("./components/BlankSection"));
 const VisionSection = lazy(() => import("./components/VisionSection"));
+const ContactSection = lazy(() => import("./components/ContactSection"));
 const ScrollIndicator = lazy(() => import("./components/Hero/ScrollIndicator"));
 const AnimatedBackground = lazy(
   () => import("./components/Hero/AnimatedBackground"),
@@ -44,7 +44,7 @@ const App = () => {
           <AboutSection nextSectionRef={darkSectionRef} />
         </div>
         <DarkSection sectionRef={darkSectionRef} />
-        <BlankSection />
+        <ContactSection />
       </Suspense>
     </main>
   );

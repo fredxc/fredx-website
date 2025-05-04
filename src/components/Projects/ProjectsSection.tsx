@@ -40,7 +40,7 @@ const ProjectsSection: React.FC = () => {
       projectRefs.current.forEach((ref, index) => {
         if (ref) {
           const rect = ref.getBoundingClientRect();
-          if (rect.top <= window.innerHeight * 0.2 && rect.bottom >= 0) {
+          if (rect.top <= window.innerHeight * 0.35 && rect.bottom >= 0) {
             setActiveIndex(index + 1);
           }
         }
@@ -65,7 +65,7 @@ const ProjectsSection: React.FC = () => {
       </motion.h2>
 
       <div className="grid grid-cols-5 gap-8">
-        <div className="sticky top-28 col-span-2 mb-[40%] h-fit rounded-lg">
+        <div className="sticky top-32 col-span-2 mb-[40%] h-fit rounded-lg">
           <Counter count={activeIndex} />
         </div>
 

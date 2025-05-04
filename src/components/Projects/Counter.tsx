@@ -23,7 +23,6 @@ const Counter: React.FC<CounterProps> = ({ count }) => {
           <span className="inline-block">1.</span>
           <span className="inline-block">2.</span>
           <span className="inline-block">3.</span>
-          <span className="inline-block">4.</span>
         </motion.div>
       </div>
     </div>
