@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/fredc-website/assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FRED C.</title>
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) {
+          a.q.push(ar);
+        };
+        let d = C.document;
+        C.Cal =
+          C.Cal ||
+          function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () {
+                p(api, arguments);
+              };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+              } else p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "30min", { origin: "https://cal.com" });
+      Cal.ns["30min"]("ui", {
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#282521" },
+          dark: { "cal-brand": "#F6F7F6" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    </script>
+    <script type="module" crossorigin src="/fredc-website/assets/index-LkwbG8sO.js"></script>
+    <link rel="stylesheet" crossorigin href="/fredc-website/assets/index-CqwKW4u-.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

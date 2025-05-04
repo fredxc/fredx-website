@@ -1,0 +1,1 @@
+import{r as e,j as t}from"./index-LkwbG8sO.js";import{m as o,x as r}from"./animations-DssRoHOR.js";const s=({imageUrl:a})=>t.jsx(o.div,{initial:"hidden",variants:r,animate:["visible","backgroundSize"],style:{backgroundImage:`url(${a})`},className:"absolute z-0 h-4/6 w-1/2 self-center rounded-xl bg-cover bg-center"}),m=e.memo(s);export{m as default};
