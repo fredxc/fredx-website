@@ -1,40 +1,33 @@
 import Counter from "./Counter";
 import { motion } from "framer-motion";
+import ReactPlayer from "react-player/lazy";
 import { useState, useEffect, useRef } from "react";
 import { bottomFadeIn, sideFadeIn } from "../../constants/animations";
 
 const projects = [
   {
     id: 1,
-    imgSrc: "/assets/bg-1.jpg",
     alt: "Fred Xavier Portrait",
     title: "Digital Product",
     heading: "Design & Technology",
     tags: ["MOBILE", "REACT NATIVE"],
+    videoSrc: "https://player.vimeo.com/video/435779266",
   },
   {
     id: 2,
-    imgSrc: "/assets/bg-2.jpg",
     alt: "Fred Xavier Portrait",
     title: "Digital Product",
     heading: "Design & Technology",
     tags: ["WEB", "REACT"],
+    videoSrc: "https://player.vimeo.com/video/435779266",
   },
   {
     id: 3,
-    imgSrc: "/assets/bg-3.jpg",
     alt: "Fred Xavier Portrait",
     title: "Digital Product",
     heading: "Design & Technology",
     tags: ["DESIGN", "UI/UX"],
-  },
-  {
-    id: 4,
-    imgSrc: "/assets/bg-4.jpg",
-    alt: "Fred Xavier Portrait",
-    title: "Digital Product",
-    heading: "Design & Technology",
-    tags: ["BACKEND", "NODEJS"],
+    videoSrc: "https://player.vimeo.com/video/435779266",
   },
 ];
 
@@ -84,15 +77,21 @@ const ProjectsSection: React.FC = () => {
               initial="hidden"
               variants={sideFadeIn}
               whileInView="visible"
-              className="mb-20 flex flex-col"
+              className="mb-40 flex flex-col"
               viewport={{ once: true, amount: 0.3 }}
               ref={(el) => (projectRefs.current[index] = el)}
             >
-              <img
-                alt={project.alt}
-                src={project.imgSrc}
-                className="h-auto w-full rounded-lg opacity-80"
-              />
+              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+                <ReactPlayer
+                  loop
+                  muted
+                  playing
+                  width="100%"
+                  height="100%"
+                  url={project.videoSrc}
+                  className="absolute left-0 top-0"
+                />
+              </div>
               <h3 className="mt-2 text-xl text-light-cream/80">
                 {project.title}
               </h3>
