@@ -5,7 +5,7 @@ import { Circle, Diamond, Hexagon, Squircle, Triangle } from "lucide-react";
 const experiences = [
   {
     date: "Jan 2023 - Present",
-    title: "FRONTEND TECH LEAD",
+    title: "TECH LEAD",
     company: "Weme",
     description:
       "I lead web and mobile development, ensuring scalable, high-performance applications. I focus on frontend architecture, DevOps, and agile collaboration, delivering seamless UI/UX experiences. My expertise includes cloud-based deployments, performance optimizations, and cross-functional leadership, driving efficiency and innovation in large-scale projects.",
@@ -81,6 +81,7 @@ const Timeline = () => {
           {index === 4 && <Triangle className={iconStyle} />}
 
           <motion.div
+            custom={index}
             initial="hidden"
             whileInView="visible"
             variants={sideFadeIn}

@@ -16,6 +16,7 @@ export default {
       fontSize: {
         "7xl": "6rem",
         "8xl": "10rem",
+        "9xl": "12rem",
       },
       maxWidth: {
         "7xl": "75rem",

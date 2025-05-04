@@ -1,21 +1,22 @@
-import Navbar from "./components/Navbar";
-import AboutSection from "./components/AboutSection";
-import ExperienceSection from "./components/Experience/ExperienceSection";
-import useThemeStore from "./hooks/useThemeStore";
 import { memo, Suspense, lazy, useRef } from "react";
 
+import useThemeStore from "./hooks/useThemeStore";
+const Navbar = lazy(() => import("./components/Navbar"));
 const HeroText = lazy(() => import("./components/Hero/HeroText"));
+const DarkSection = lazy(() => import("./components/DarkSection"));
+const AboutSection = lazy(() => import("./components/AboutSection"));
+const BlankSection = lazy(() => import("./components/BlankSection"));
+const VisionSection = lazy(() => import("./components/VisionSection"));
 const ScrollIndicator = lazy(() => import("./components/Hero/ScrollIndicator"));
 const AnimatedBackground = lazy(
   () => import("./components/Hero/AnimatedBackground"),
 );
-const VisionSection = lazy(() => import("./components/VisionSection"));
-const BlankSection = lazy(() => import("./components/BlankSection"));
 
 const App = () => {
   const { theme } = useThemeStore();
+  const darkSectionRef = useRef(null);
+
   const darkTheme = theme === "dark";
-  const experienceSectionRef = useRef(null);
 
   return (
     <main
@@ -25,8 +26,6 @@ const App = () => {
           : "bg-light-cream text-primary-dark"
       }`}
     >
-      <Navbar />
-
       <Suspense
         fallback={
           <div className="flex h-screen items-center justify-center">
@@ -34,6 +33,7 @@ const App = () => {
           </div>
         }
       >
+        <Navbar />
         <div className="mx-auto max-w-7xl">
           <section className="flex min-h-screen min-w-full items-center justify-center overflow-hidden">
             <AnimatedBackground imageUrl="/assets/hero-bg.png" />
@@ -41,12 +41,10 @@ const App = () => {
             <ScrollIndicator />
           </section>
           <VisionSection />
-          <AboutSection nextSectionRef={experienceSectionRef} />
+          <AboutSection nextSectionRef={darkSectionRef} />
         </div>
-        <div className="relative z-10">
-          <ExperienceSection sectionRef={experienceSectionRef} />
-          <BlankSection />
-        </div>
+        <DarkSection sectionRef={darkSectionRef} />
+        <BlankSection />
       </Suspense>
     </main>
   );

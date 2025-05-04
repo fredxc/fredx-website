@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { bottomFadeIn, fadeIn } from "../constants/animations";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -17,12 +17,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
     target: isMounted ? nextSectionRef : undefined,
     offset: ["start end", "end start"],
   });
-
-  useEffect(() => {
-    scrollYProgress.on("change", (latest) => {
-      console.log(latest.toFixed(2));
-    });
-  }, [scrollYProgress]);
 
   const opacityConstant = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scaleConstant = useTransform(scrollYProgress, [0, 0.6], [1, 0.8]);
@@ -107,4 +101,4 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
   );
 };
 
-export default AboutSection;
+export default memo(AboutSection);
