@@ -1,10 +1,12 @@
 import { memo, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { bottomFadeIn, fadeIn } from "../constants/animations";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaRegCheckCircle } from "react-icons/fa";
+import { FaRegCopy } from "react-icons/fa6";
 
 const ContactSection: React.FC = () => {
   const [time, setTime] = useState<string>("");
+  const [copied, setCopied] = useState<boolean>(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -77,7 +79,24 @@ const ContactSection: React.FC = () => {
               <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest">
                 Contact Details
               </h4>
-              <p className="text-lg">hello@fredxc.com</p>
+              <div
+                onClick={() => {
+                  navigator.clipboard.writeText("hello@fredx.dev");
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 1000);
+                }}
+                className="flex cursor-pointer items-center gap-2 pb-1"
+              >
+                <p className="text-lg" title="Copy to clipboard">
+                  hello@fredx.dev
+                </p>
+                <FaRegCopy
+                  className={`text-sm transition-opacity duration-300 ${copied ? "opacity-0" : "opacity-100"}`}
+                />
+                <FaRegCheckCircle
+                  className={`-ml-5 text-sm transition-opacity duration-300 ${copied ? "opacity-100" : "opacity-0"}`}
+                />
+              </div>
               <p className="text-lg underline decoration-primary-dark underline-offset-4">
                 +55 379 9916 1737
               </p>
@@ -117,7 +136,7 @@ const ContactSection: React.FC = () => {
               <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest">
                 Location
               </h4>
-              <p>Amsterdam, Netherlands</p>
+              <p>Utrecht, Netherlands</p>
               <p>{time}</p>
             </div>
           </motion.div>
