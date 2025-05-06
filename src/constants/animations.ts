@@ -24,7 +24,10 @@ export const bottomFadeIn: Variants = {
 };
 
 export const sideFadeIn: Variants = {
-  hidden: (custom: number) => ({ opacity: 0, x: custom % 2 === 0 ? -50 : 50 }),
+  hidden: (custom: number) => {
+    const isMobile = window.innerWidth < 768;
+    return { opacity: 0, x: isMobile ? 50 : custom % 2 === 0 ? -50 : 50 };
+  },
   visible: {
     x: 0,
     opacity: 1,
