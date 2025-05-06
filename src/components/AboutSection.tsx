@@ -23,7 +23,10 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
   const yConstant = useTransform(scrollYProgress, [0, 0.8], [0, 140]);
 
   return (
-    <section id="about" className="relative mb-[-100svh] px-6 py-24">
+    <section
+      id="about"
+      className="relative mb-[-80svh] px-6 py-24 md:mb-[-100svh]"
+    >
       <motion.div
         style={{
           scale: scaleConstant,
@@ -38,14 +41,14 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
             whileInView="visible"
             variants={bottomFadeIn}
             viewport={{ once: true, amount: 0.8 }}
-            className="mb-16 flex items-center justify-center text-6xl font-semibold text-primary-dark/75 md:text-7xl"
+            className="mb-8 flex items-center justify-center text-center text-[2.75rem] font-bold text-primary-dark/75 md:mb-16 md:text-6xl md:font-semibold lg:text-7xl"
           >
-            <span className="mr-4 text-4xl">⯋</span>ABOUT ME
-            <span className="ml-4 text-4xl">⯋</span>
+            <span className="mr-4 text-2xl md:text-4xl">⯋</span>ABOUT ME
+            <span className="ml-4 text-2xl md:text-4xl">⯋</span>
           </motion.h2>
 
-          <div className="grid grid-cols-2 gap-8">
-            <div className="sticky -top-8 h-fit overflow-hidden rounded-lg">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="sticky -top-8 h-96 overflow-hidden rounded-lg md:h-fit">
               <motion.img
                 initial="hidden"
                 variants={fadeIn}
@@ -63,7 +66,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
                 whileInView="visible"
                 variants={bottomFadeIn}
                 viewport={{ once: true, amount: 0.4 }}
-                className="mb-6 text-5xl font-bold"
+                className="mb-6 text-3xl font-bold md:text-5xl"
               >
                 A brief intro, who am I?
               </motion.h3>

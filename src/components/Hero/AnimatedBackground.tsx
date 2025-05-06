@@ -14,7 +14,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
     variants={scaleIn}
     animate={["visible", "backgroundSize"]}
     style={{ backgroundImage: `url(${imageUrl})` }}
-    className="absolute z-0 h-4/6 w-1/2 self-center rounded-xl bg-cover bg-center"
+    className="absolute z-0 h-1/2 w-3/4 self-center rounded-xl bg-center lg:h-4/6 xl:w-1/2"
   />
 );
 

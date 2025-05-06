@@ -8,7 +8,7 @@ const ScrollIndicator: React.FC = () => (
     initial="hidden"
     animate="visible"
     variants={fadeIn}
-    className="absolute bottom-16 right-0 flex w-24 rotate-90 items-center gap-4 overflow-hidden text-primary-dark"
+    className="absolute -right-4 bottom-16 flex w-24 rotate-90 items-center gap-4 overflow-hidden text-primary-dark xl:right-0"
   >
     <span className="font-bold">scroll</span>
     <div className="relative flex w-20 items-center">

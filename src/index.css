@@ -25,5 +25,13 @@
   .hero-text-outline {
     color: transparent;
     -webkit-text-stroke: 6px #393632;
+
+    @media (max-width: 992px) {
+      -webkit-text-stroke: 4px #393632;
+    }
+
+    @media (max-width: 640px) {
+      -webkit-text-stroke: 3px #393632;
+    }
   }
 }

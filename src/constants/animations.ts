@@ -34,15 +34,26 @@ export const sideFadeIn: Variants = {
 
 export const pullUp: Variants = {
   initial: { height: 0 },
-  animate: (custom: number) => ({
-    height: "15rem",
-    transition: {
-      bounce: 0.4,
-      duration: 1,
-      ease: "easeOut",
-      delay: GLOBAL_DELAY + custom,
-    },
-  }),
+  animate: (custom: number) => {
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth < 1024;
+    const isLaptop = window.innerWidth < 1200;
+    return {
+      height: isMobile
+        ? "6rem"
+        : isTablet
+          ? "8rem"
+          : isLaptop
+            ? "12rem"
+            : "15rem",
+      transition: {
+        bounce: 0.4,
+        duration: 1,
+        ease: "easeOut",
+        delay: GLOBAL_DELAY + custom,
+      },
+    };
+  },
 };
 
 export const navAnimation: Variants = {
@@ -66,7 +77,7 @@ export const scaleIn: Variants = {
   },
   backgroundSize: {
     scale: 1,
-    backgroundSize: "110%",
+    backgroundSize: "auto 100%",
     transition: { duration: 2, ease: "easeInOut" },
   },
 };
