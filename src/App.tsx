@@ -18,10 +18,9 @@ const App = () => {
 
   const darkTheme = theme === "dark";
 
-  // TODO: Need to fix the overflow-hidden issue on the main tag
   return (
     <main
-      className={`min-h-screen overflow-hidden transition-colors duration-700 lg:overflow-visible ${
+      className={`min-h-screen transition-colors duration-700 lg:overflow-visible ${
         darkTheme
           ? "bg-primary-dark text-white"
           : "bg-light-cream text-primary-dark"

@@ -52,7 +52,10 @@ const ProjectsSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="projects" className="relative mx-auto max-w-7xl px-4 py-24">
+    <section
+      id="projects"
+      className="relative mx-auto max-w-7xl overflow-hidden px-4 py-24"
+    >
       <motion.h2
         initial="hidden"
         whileInView="visible"

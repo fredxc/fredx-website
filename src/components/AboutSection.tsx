@@ -35,7 +35,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
           willChange: "opacity, transform",
         }}
       >
-        <div className="sticky -top-16 h-svh">
+        <div className="sticky -top-[25svh] h-svh md:-top-16">
           <motion.h2
             initial="hidden"
             whileInView="visible"
@@ -48,7 +48,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
           </motion.h2>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="sticky -top-8 h-96 overflow-hidden rounded-lg md:h-fit">
+            <div className="h-96 overflow-hidden rounded-lg md:sticky md:-top-8 md:h-fit">
               <motion.img
                 initial="hidden"
                 variants={fadeIn}
