@@ -16,14 +16,14 @@ const VisionSection: React.FC = () => {
     <section
       ref={sectionRef}
       id="vision-section"
-      className="flex h-screen items-center justify-center px-6"
+      className="flex items-center justify-center px-6 py-16 md:h-screen"
     >
       <motion.h2
         initial="hidden"
         whileInView="visible"
         variants={bottomFadeIn}
         viewport={{ once: true, amount: 0.8 }}
-        className="text-7xl font-medium leading-tight tracking-tight text-light-cream/90"
+        className="text-[3.5rem] font-medium leading-tight tracking-tight text-light-cream/90 md:text-6xl lg:text-[5rem] xl:text-7xl"
       >
         I bring ideas to life through development and design, turning visions
         into reality.

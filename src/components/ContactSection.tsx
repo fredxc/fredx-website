@@ -28,7 +28,7 @@ const ContactSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative h-svh w-full bg-light-cream px-6 pt-[12.5%]"
+      className="relative flex items-center md:items-start h-svh w-full bg-light-cream px-6 pt-[12.5%]"
     >
       <div className="mx-auto max-w-7xl">
         <motion.h2
@@ -36,24 +36,24 @@ const ContactSection: React.FC = () => {
           whileInView="visible"
           variants={bottomFadeIn}
           viewport={{ once: true, amount: 0.8 }}
-          className="mb-24 flex items-center justify-center text-6xl font-semibold text-primary-dark/75 md:text-7xl"
+          className="mb-16 flex items-center leading-none justify-center text-center text-[2.75rem] font-bold text-primary-dark/75 md:mb-24 md:text-6xl md:font-semibold lg:text-7xl"
         >
-          <span className="mr-4 text-4xl">⯋</span>CONTACT ME
-          <span className="ml-4 text-4xl">⯋</span>
+          <span className="mr-2 md:mr-4 text-2xl md:text-4xl">⯋</span>CONTACT ME
+          <span className="ml-2 md:ml-4 text-2xl md:text-4xl">⯋</span>
         </motion.h2>
 
-        <div className="flex flex-col gap-y-12 px-20 md:flex-row md:justify-between md:gap-x-16">
+        <div className="flex flex-col gap-y-12 px-4 md:flex-row md:justify-between md:gap-x-16 md:px-20">
           <motion.div
             initial="hidden"
             variants={fadeIn}
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="flex w-4/6 flex-col gap-8 text-primary-dark"
+            className="flex w-full flex-col gap-6 text-primary-dark md:w-4/6 md:gap-8"
           >
-            <h3 className="text-4xl font-bold">
-              Let’s build something amazing together?
+            <h3 className="text-2xl font-bold md:text-4xl">
+              Let's build something amazing together?
             </h3>
-            <p className="text-lg text-primary-dark/70">
+            <p className="text-base text-primary-dark/70 md:text-lg">
               I help startups and product teams turn ideas into real,
               user-friendly digital experiences.
             </p>
@@ -62,7 +62,7 @@ const ContactSection: React.FC = () => {
               data-cal-link="fredxc/30min"
               data-cal-namespace="30min"
               data-cal-config='{"layout":"month_view"}'
-              className="w-fit rounded-full bg-primary-dark px-8 py-4 text-lg font-medium text-light-cream transition hover:scale-105 hover:shadow-lg"
+              className="w-full rounded-full bg-primary-dark px-6 py-3 text-base font-medium text-light-cream transition hover:scale-105 hover:shadow-lg md:w-fit md:px-8 md:py-4 md:text-lg"
             >
               Book a Call
             </button>
@@ -73,7 +73,7 @@ const ContactSection: React.FC = () => {
             variants={fadeIn}
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="flex flex-1 flex-col justify-center gap-8 text-primary-dark"
+            className="flex w-full flex-col justify-center gap-6 text-primary-dark md:flex-1 md:gap-8"
           >
             <div>
               <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest">
@@ -87,7 +87,7 @@ const ContactSection: React.FC = () => {
                 }}
                 className="flex cursor-pointer items-center gap-2 pb-1"
               >
-                <p className="text-lg" title="Copy to clipboard">
+                <p className="text-base md:text-lg" title="Copy to clipboard">
                   hello@fredx.dev
                 </p>
                 <FaRegCopy
@@ -97,7 +97,7 @@ const ContactSection: React.FC = () => {
                   className={`-ml-5 text-sm transition-opacity duration-300 ${copied ? "opacity-100" : "opacity-0"}`}
                 />
               </div>
-              <p className="text-lg underline decoration-primary-dark underline-offset-4">
+              <p className="text-base underline decoration-primary-dark underline-offset-4 md:text-lg">
                 +55 379 9916 1737
               </p>
             </div>
@@ -106,25 +106,25 @@ const ContactSection: React.FC = () => {
               <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest">
                 My Digital Spaces
               </h4>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-2 md:gap-3">
                 <li className="flex items-center gap-2">
-                  <FaLinkedin className="text-lg text-primary-dark" />
+                  <FaLinkedin className="text-base text-primary-dark md:text-lg" />
                   <a
                     href="https://www.linkedin.com/in/fredericocapanema/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline"
+                    className="text-base hover:underline md:text-lg"
                   >
                     LinkedIn
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
-                  <FaGithub className="text-lg text-primary-dark" />
+                  <FaGithub className="text-base text-primary-dark md:text-lg" />
                   <a
                     href="https://github.com/fredxc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline"
+                    className="text-base hover:underline md:text-lg"
                   >
                     GitHub
                   </a>
@@ -136,8 +136,8 @@ const ContactSection: React.FC = () => {
               <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest">
                 Location
               </h4>
-              <p>Utrecht, Netherlands</p>
-              <p>{time}</p>
+              <p className="text-base md:text-lg">Utrecht, Netherlands</p>
+              <p className="text-base md:text-lg">{time}</p>
             </div>
           </motion.div>
         </div>
