@@ -27,7 +27,7 @@ const DarkSection: React.FC<DarkSectionProps> = ({ sectionRef }) => {
       <motion.section
         ref={sectionRef}
         style={{ scale: scaledValue }}
-        className="relative -mb-8 h-fit rounded-3xl bg-primary-dark"
+        className="relative md:-mb-8 h-fit rounded-3xl bg-primary-dark"
       >
         <ExperienceSection />
         <ProjectsSection />

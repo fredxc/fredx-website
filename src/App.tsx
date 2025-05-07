@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <main
-      className={`min-h-screen transition-colors duration-700 ${
+      className={`min-h-screen transition-colors duration-700 lg:overflow-visible ${
         darkTheme
           ? "bg-primary-dark text-white"
           : "bg-light-cream text-primary-dark"
