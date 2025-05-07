@@ -41,7 +41,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
             whileInView="visible"
             variants={bottomFadeIn}
             viewport={{ once: true, amount: 0.8 }}
-            className="mb-8 flex items-center justify-center text-center text-[2.75rem] font-bold text-primary-dark/75 md:mb-16 md:text-6xl md:font-semibold lg:text-7xl"
+            className="mb-8 flex items-center leading-none justify-center text-center text-[2.75rem] font-bold text-primary-dark/75 md:mb-16 md:text-6xl md:font-semibold lg:text-7xl"
           >
             <span className="mr-4 text-2xl md:text-4xl">⯋</span>ABOUT ME
             <span className="ml-4 text-2xl md:text-4xl">⯋</span>

@@ -61,10 +61,10 @@ const ProjectsSection: React.FC = () => {
         whileInView="visible"
         variants={bottomFadeIn}
         viewport={{ once: true, amount: 0.8 }}
-        className="mb-12 flex items-center justify-center text-center text-4xl font-semibold text-light-cream/90 md:mb-24 md:text-6xl"
+        className="mb-12 flex items-center justify-center text-center text-[2.75rem] font-bold text-light-cream/90 md:mb-24 md:text-6xl md:font-semibold lg:text-7xl"
       >
-        <span className="mr-3 text-3xl md:mr-4 md:text-4xl">⯋</span>PROJECTS
-        <span className="ml-3 text-3xl md:ml-4 md:text-4xl">⯋</span>
+        <span className="mr-4 text-2xl md:text-4xl">⯋</span>PROJECTS
+        <span className="ml-4 text-2xl md:text-4xl">⯋</span>
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8">
