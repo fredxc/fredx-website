@@ -22,15 +22,15 @@ const Navbar: React.FC = () => {
       initial="hidden"
       animate="visible"
       variants={navAnimation}
-      className={`fixed left-0 right-0 top-0 z-50 transition-colors duration-700 overflow-x-hidden ${navBg}`}
+      className={`fixed left-0 right-0 top-0 z-50 overflow-x-hidden transition-colors duration-700 ${navBg}`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 xl:px-2">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 xl:px-2">
         {/* Logo */}
         <a href="#" className={`flex items-center gap-2 ${textColor}`}>
           <img
             src={darkTheme ? "/assets/logo-light.png" : "/assets/logo.png"}
             alt="Logo"
-            className="w-8"
+            className="w-6 md:w-8"
           />
         </a>
 
@@ -39,13 +39,19 @@ const Navbar: React.FC = () => {
           className={`flex items-center gap-8 text-lg font-semibold transition-colors duration-300 ${textColorMuted}`}
         >
           {/* Hide these links on mobile */}
-          <li className={`transition-colors duration-200 ${hoverColor} hidden sm:block`}>
+          <li
+            className={`transition-colors duration-200 ${hoverColor} hidden sm:block`}
+          >
             <a href="#about">about</a>
           </li>
-          <li className={`transition-colors duration-200 ${hoverColor} hidden sm:block`}>
+          <li
+            className={`transition-colors duration-200 ${hoverColor} hidden sm:block`}
+          >
             <a href="#experience">experience</a>
           </li>
-          <li className={`transition-colors duration-200 ${hoverColor} hidden sm:block`}>
+          <li
+            className={`transition-colors duration-200 ${hoverColor} hidden sm:block`}
+          >
             <a href="#projects">projects</a>
           </li>
 
@@ -53,7 +59,7 @@ const Navbar: React.FC = () => {
           <li className="block w-full sm:w-auto">
             <a
               href="#contact"
-              className={`rounded-full px-6 py-2 font-semibold transition-colors duration-200 hover:bg-soft-green ${buttonBg} w-full sm:w-auto block text-center`}
+              className={`rounded-full px-6 py-1 font-semibold transition-colors duration-200 hover:bg-soft-green md:py-2 ${buttonBg} block text-center`}
             >
               Let's Talk
             </a>

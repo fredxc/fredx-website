@@ -28,7 +28,7 @@ const ContactSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative flex items-center md:items-start h-svh w-full bg-light-cream px-6 pt-[12.5%]"
+      className="relative flex h-svh w-full items-center bg-light-cream px-6 md:items-start md:pt-[12.5%]"
     >
       <div className="mx-auto max-w-7xl">
         <motion.h2
@@ -36,13 +36,13 @@ const ContactSection: React.FC = () => {
           whileInView="visible"
           variants={bottomFadeIn}
           viewport={{ once: true, amount: 0.8 }}
-          className="mb-16 flex items-center leading-none justify-center text-center text-[2.75rem] font-bold text-primary-dark/75 md:mb-24 md:text-6xl md:font-semibold lg:text-7xl"
+          className="mb-8 flex items-center justify-center text-center text-[2.75rem] font-bold leading-none text-primary-dark/75 md:mb-24 md:text-6xl md:font-semibold lg:text-7xl"
         >
-          <span className="mr-2 md:mr-4 text-2xl md:text-4xl">⯋</span>CONTACT ME
-          <span className="ml-2 md:ml-4 text-2xl md:text-4xl">⯋</span>
+          <span className="mr-2 text-2xl md:mr-4 md:text-4xl">⯋</span>CONTACT ME
+          <span className="ml-2 text-2xl md:ml-4 md:text-4xl">⯋</span>
         </motion.h2>
 
-        <div className="flex flex-col gap-y-12 px-4 md:flex-row md:justify-between md:gap-x-16 md:px-20">
+        <div className="flex flex-col gap-y-4 px-4 md:flex-row md:justify-between md:gap-x-16 md:px-20">
           <motion.div
             initial="hidden"
             variants={fadeIn}

@@ -35,7 +35,7 @@ const App = () => {
       >
         <Navbar />
         <div className="mx-auto max-w-7xl">
-          <section className="flex min-h-screen min-w-full items-center justify-center overflow-hidden">
+          <section className="flex min-h-screen min-w-full items-center justify-center overflow-hidden pb-20 md:pb-0">
             <AnimatedBackground imageUrl="/assets/hero-bg.png" />
             <HeroText text="HEY, I'M FRED" />
             <ScrollIndicator />
