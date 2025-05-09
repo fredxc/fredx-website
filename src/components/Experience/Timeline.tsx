@@ -46,23 +46,23 @@ const experiences = [
 ];
 
 const iconStyle =
-  "absolute left-10 md:left-1/2 top-12 h-8 w-8 -translate-x-1/2 rounded-full fill-soft-green stroke-soft-green";
+  "absolute mt-7 md:mt-0 left-10 md:left-1/2 md:top-12 h-8 w-8 -translate-x-1/2 rounded-full fill-soft-green stroke-soft-green";
 
 const experienceListOffsets = [
   "",
-  "mt-[-91.6%] md:mt-[-41.5%] lg:mt-[-37.5%]",
-  "mt-[-66.7%] md:mt-[-33.2%] lg:mt-[-29.2%]",
-  "mt-[-41.8%] md:mt-[-24.9%] lg:mt-[-20.9%]",
-  "mt-[-16.9%] md:mt-[-16.6%] lg:mt-[-12.5%]",
+  "md:mt-[-41.5%] lg:mt-[-37.5%]",
+  "md:mt-[-33.2%] lg:mt-[-29.2%]",
+  "md:mt-[-24.9%] lg:mt-[-20.9%]",
+  "md:mt-[-16.6%] lg:mt-[-12.5%]",
 ];
 
 const Timeline = () => {
   return (
-    <div id="timeline" className="relative mx-auto h-[200svh] max-w-7xl">
+    <div id="timeline" className="relative mx-auto max-w-7xl md:h-[200svh]">
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className={`sticky mx-auto flex w-full overflow-hidden bg-primary-dark ${experienceListOffsets[index]} py-4 ${
+          className={`mx-auto flex w-full overflow-hidden bg-primary-dark md:sticky ${experienceListOffsets[index]} py-4 ${
             index % 2 === 0 ? "justify-start" : "justify-end"
           }`}
           style={{
@@ -71,7 +71,7 @@ const Timeline = () => {
           }}
         >
           <div
-            className={`absolute left-10 md:left-1/2 ${index ? "top-0" : "top-16"} z-10 ${index === experiences.length - 1 ? "h-16" : "h-full"} w-1 -translate-x-1/2 bg-soft-green`}
+            className={`absolute left-10 md:left-1/2 ${index ? "top-16 md:top-0" : "top-16"} z-10 ${index === experiences.length - 1 ? "h-16" : "h-[79%] md:h-full"} w-1 -translate-x-1/2 bg-soft-green`}
           />
 
           {index === 0 && <Diamond className={iconStyle} />}
@@ -99,12 +99,12 @@ const Timeline = () => {
             <p className="font-sans text-lg font-bold text-soft-green">
               at {exp.company}
             </p>
-            <p className="mt-4 font-sans text-xl text-light-cream lg:mt-8 xl:text-2xl">
+            <p className="mt-4 font-sans text-lg text-light-cream md:text-xl lg:mt-8 xl:text-xl">
               {exp.description}
             </p>
           </motion.div>
           {index != 0 && (
-            <div className="absolute top-0 h-[1px] w-full bg-soft-green/20" />
+            <div className="absolute top-0 hidden h-[1px] w-full bg-soft-green/20 md:block" />
           )}
         </div>
       ))}

@@ -4,7 +4,7 @@ import { bottomFadeIn } from "../../constants/animations";
 
 const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="pt-24">
+    <section id="experience" className="pt-12 md:pt-24">
       <motion.h2
         initial="hidden"
         whileInView="visible"

@@ -35,20 +35,20 @@ const AboutSection: React.FC<AboutSectionProps> = ({ nextSectionRef }) => {
           willChange: "opacity, transform",
         }}
       >
-        <div className="sticky -top-[25svh] h-svh md:-top-16">
+        <div className="sticky -top-[50svh] h-[120svh] md:-top-16 md:h-svh">
           <motion.h2
             initial="hidden"
             whileInView="visible"
             variants={bottomFadeIn}
             viewport={{ once: true, amount: 0.8 }}
-            className="mb-8 flex items-center leading-none justify-center text-center text-[2.75rem] font-bold text-primary-dark/75 md:mb-16 md:text-6xl md:font-semibold lg:text-7xl"
+            className="mb-8 flex items-center justify-center text-center text-[2.75rem] font-bold leading-none text-primary-dark/75 md:mb-16 md:text-6xl md:font-semibold lg:text-7xl"
           >
             <span className="mr-4 text-2xl md:text-4xl">⯋</span>ABOUT ME
             <span className="ml-4 text-2xl md:text-4xl">⯋</span>
           </motion.h2>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="h-96 overflow-hidden rounded-lg md:sticky md:-top-8 md:h-fit">
+            <div className="h-80 overflow-hidden rounded-lg md:sticky md:-top-8 md:h-fit">
               <motion.img
                 initial="hidden"
                 variants={fadeIn}
